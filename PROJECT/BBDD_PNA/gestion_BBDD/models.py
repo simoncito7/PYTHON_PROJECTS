@@ -22,19 +22,25 @@ class Causa(models.Model):
     # estado de causa. Se debe elegir entre las opciones dadas
     estado_causa = models.CharField(max_length=10, choices=estado, default='En espera',verbose_name= "Estado de causa")      
     # se debe elegir la fecha de entrada
-    fecha = models.DateTimeField(verbose_name="Fecha de Entrada")                                              # fecha de entrada de la causa
+    fecha = models.DateTimeField(verbose_name="Fecha de Entrada")                                              
     # se debe ingresar a mano la fecha de salida o elevación 
     fecha_elev2 = models.CharField(max_length=15, verbose_name="Fecha de elevación (DD/MM/AA)",blank=True, null=True)                                                # fecha de elevación de la causa
-    
-    juzgado = models.CharField(max_length=50, verbose_name= "Juzgado interviniente")                                         # name of the judge
+    # juzgado
+    juzgado = models.CharField(max_length=50, verbose_name= "Juzgado interviniente")      
+    # nombre del juez                                   
     resp_juzgado = models.CharField(max_length=50, verbose_name= "Responsable de juzgado")
+    # teléfono del juzgado
     tel_juzgado = models.CharField(max_length=12, verbose_name= "Teléfono de juzgado")
+    # número de la secretaría correspondiente
     secretaria = models.CharField(max_length=50, verbose_name= "Número de secretaría")
+    # nombre de el/la secretario/a
     resp_secretaria = models.CharField(max_length=50, verbose_name= "Responsable de secretaría")
+    # nombre del personal que lleva a cabo la causa
     resp_PNA = models.CharField(max_length=50, verbose_name= "Personal de PNA asignado")
+    # campo de texto al que se pueden agregar observaciones
     observ2 = models.TextField(verbose_name= "Observaciones", max_length=400, default='')
     
-
+    # definimos esta clase para visualizar algunos campos (en este caso el número de causa)
     def __str__(self):
 
         return(self.nro_causa)
@@ -59,6 +65,7 @@ class Numeradore(models.Model):
     # campo de texto para agregar alguna referencia al oficio generado
     referencia = models.CharField(max_length=100, verbose_name="Referencia")
 
+    # definimos esta clase para que se muestre este campo (en este caso el tipo de documento que se está almacenando)
     def __str__(self):
 
         return(self.tipo_documento)

@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+
+
 # from .models import BackGroungImage
 
 # importamos las clases que creamos desde nuestro modelo
@@ -16,6 +18,9 @@ class DatosCausas(admin.ModelAdmin):
     search_fields=("nro_causa",)
     #se agregan filtros por causa y juzgado
     # list_filter=("resp_PNA",)
+    
+    # mediante fields() se pueden setear los campos que se quieren mostrar 
+    # fields = (('juzgado', 'tel_juzgado'),)
 
 
 

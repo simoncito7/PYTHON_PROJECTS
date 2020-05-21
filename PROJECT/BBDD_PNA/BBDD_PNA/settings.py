@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+# se agrega la librería MySQLdb para poder trabajar con MySQL
 import os
 import MySQLdb
 
@@ -30,8 +30,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# 'BBDD_PNA.apps.SuitConfig',
+# 'suit',
 INSTALLED_APPS = [
+    'BBDD_PNA.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,6 +71,8 @@ TEMPLATES = [
     },
 ]
 
+
+        
 WSGI_APPLICATION = 'BBDD_PNA.wsgi.application'
 
 
@@ -113,7 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-# LANGUAGE_CODE = 'en-us'
+# en este caso modificamos el idioma a español de argentina (por defecto viene seteado en inglés de Estados Unidos ---> LANGUAGE_CODE = 'en-us')
+
 LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'UTC'

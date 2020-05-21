@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gestion_BBDD import views                         # importamos "views" desde gestion_BBDD
+from django.urls import reverse
 
-# agregamos a la lista de paths "Causas" y "Numerador"
+# agregamos a la lista de paths "Causas" y "Numerador" 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('causas', views.causas, name="Causas"),
