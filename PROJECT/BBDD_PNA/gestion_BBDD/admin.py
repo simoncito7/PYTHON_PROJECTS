@@ -1,7 +1,9 @@
 from django.contrib import admin
 
+# from .models import BackGroungImage
+
 # importamos las clases que creamos desde nuestro modelo
-from gestion_BBDD.models import Causa, Persona 
+from gestion_BBDD.models import Causa, Numeradore 
 
 # Register our models here.
 class DatosCausas(admin.ModelAdmin):
@@ -18,4 +20,6 @@ class DatosCausas(admin.ModelAdmin):
 
 
 admin.site.register(Causa, DatosCausas)   # permite agregar DatosCausas a Causa
-admin.site.register(Persona)
+admin.site.register(Numeradore)
+
+# admin.site.register(BackgroundImage)
